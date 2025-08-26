@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main # or master
+  branch: feat/create-design-company-website # or master
 
 # This is where media files will be stored in the repo
 media_folder: "public/uploads"
