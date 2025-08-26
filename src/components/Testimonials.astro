@@ -1,0 +1,33 @@
+---
+const testimonials = [
+  {
+    quote: "Working with DesignCo was a transformative experience. Their attention to detail and commitment to quality is unparalleled.",
+    name: 'Jane Doe',
+    company: 'CEO, Innovate Inc.'
+  },
+  {
+    quote: "The final product exceeded all our expectations. The team is professional, creative, and incredibly talented.",
+    name: 'John Smith',
+    company: 'Marketing Director, Future Corp.'
+  }
+];
+---
+
+<section class="bg-white py-20 animate-on-scroll">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold">What Our Clients Say</h2>
+      <p class="text-lg text-gray-600 mt-2">Real feedback from our valued partners.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {testimonials.map(testimonial => (
+        <div class="bg-background p-8 rounded-lg shadow-sm">
+          <blockquote class="text-lg text-gray-700 border-l-4 border-accent pl-6">
+            <p class="mb-4">"{testimonial.quote}"</p>
+            <footer class="font-bold">{testimonial.name}, <cite class="not-italic text-gray-600">{testimonial.company}</cite></footer>
+          </blockquote>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

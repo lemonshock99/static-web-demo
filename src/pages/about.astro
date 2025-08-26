@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const teamMembers = [
+  {
+    name: 'Alex Chen',
+    title: 'Founder & Lead Designer',
+    imageUrl: 'https://via.placeholder.com/400x400.png/E5E7EB/111827?text=Alex'
+  },
+  {
+    name: 'Maria Garcia',
+    title: 'Project Manager',
+    imageUrl: 'https://via.placeholder.com/400x400.png/E5E7EB/111827?text=Maria'
+  },
+  {
+    name: 'Sam Jones',
+    title: 'Lead Developer',
+    imageUrl: 'https://via.placeholder.com/400x400.png/E5E7EB/111827?text=Sam'
+  }
+];
+---
+
+<Layout
+	title="About Us - DesignCo"
+	description="Learn about our design philosophy and the team behind our work."
+>
+  <div class="container mx-auto px-4 py-16">
+    <!-- Page Header -->
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold">About DesignCo</h1>
+      <p class="text-lg text-gray-600 mt-2">Crafting digital elegance since 2015.</p>
+    </div>
+
+    <!-- Our Philosophy Section -->
+    <section class="mb-20">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="h-96 bg-gray-light rounded-lg shadow-lg flex items-center justify-center">
+          <span class="text-gray-400">Company Image Placeholder</span>
+        </div>
+        <div>
+          <h2 class="text-3xl font-bold mb-4">Our Design Philosophy</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            At DesignCo, we believe that great design is born from a deep understanding of people. It's not just about aesthetics; it's about creating intuitive, meaningful, and seamless experiences that connect with users on an emotional level.
+          </p>
+          <p class="text-gray-700 leading-relaxed">
+            We embrace minimalism, clarity, and purpose in every project, ensuring that our work is not only beautiful but also effective and aligned with our clients' strategic goals.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Meet the Team Section -->
+    <section>
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold">Meet the Team</h2>
+        <p class="text-lg text-gray-600 mt-2">The creative minds behind our success.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        {teamMembers.map(member => (
+          <div class="text-center">
+            <img src={member.imageUrl} alt={member.name} class="w-48 h-48 mx-auto rounded-full shadow-md mb-4" />
+            <h3 class="text-xl font-bold">{member.name}</h3>
+            <p class="text-gray-500">{member.title}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+</Layout>
